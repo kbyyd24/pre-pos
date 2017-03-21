@@ -1,7 +1,11 @@
 'use strict';
 
 function collectSameElements(collectionA, objectB) {
-  let elements = [];
-  collectionA.forEach(v => objectB.value.includes(v) && elements.push(v));
-  return elements;
+  // return collectionA.map(v => {
+  //   if (objectB.value.includes(v))
+  //     return v;
+  // })
+  return collectionA
+    // .map(v => v)
+    .filter(v => objectB.value.includes(v))
 }
