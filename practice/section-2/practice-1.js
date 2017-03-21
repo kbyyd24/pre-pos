@@ -1,5 +1,21 @@
 'use strict';
 
 function countSameElements(collection) {
-  return '实现练习要求，并改写该行代码。';
+  let counts = {};
+  collection.forEach(v => {
+    if (counts[v]) {
+      counts[v] += 1;
+    } else {
+      counts[v] = 1;
+    }
+  });
+  let answer = [];
+  let keys = Object.keys(counts);
+  keys.forEach(key => {
+    answer.push({
+      key: key,
+      count: counts[key]
+    });
+  });
+  return answer;
 }
